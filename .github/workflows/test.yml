@@ -1,0 +1,16 @@
+name: Ejemplo con React
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener codigo
+        uses: actions/checkout@v4
+      - name: variable de entorno
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Instalar dependencias
+        run: npm install
+      - name: Ejecutar pruebas
+        run: npm test
